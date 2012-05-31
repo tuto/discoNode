@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>DiscoNode</title>
+		<style type="text/css" title="currentStyle" media="screen">
+			@import "css/style.css";
+		</style>
+		<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script>
+
+		  var socket = io.connect('http://localhost:8080');
+
+		  socket.on('color', function (data) {
+		  	if (data.color) {
+		  		console.log("Reciviendo color ["+data.color+"]");
+		    	document.bgColor = data.color;
+		  	}
+		  });
+		</script>
+
+	</head>
+	<body >
+
+	</body>
+</html>

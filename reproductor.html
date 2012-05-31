@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>reproductor</title>
+		<style type="text/css" title="currentStyle" media="screen">
+			@import "css/style.css";
+		</style>
+		<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script>
+			//var socket = new io.Socket(); 
+			//socket.connect('http://localhost:8080/discoNode');
+		  var socket =  io.connect('http://localhost:8080');
+
+		  function sendColor() {
+		  	var color = Math.floor(Math.random()*16777215).toString(16);
+		  	console.log("enviando color ["+color+"]");
+		  	socket.emit('music', { color: color });
+		  
+		  }
+		</script>
+
+	</head>
+	<body >
+		<input type = "submit" onclick = "sendColor();" value = "enviar color">
+	</body>
+</html>
