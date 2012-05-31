@@ -6,14 +6,13 @@
 		<style type="text/css" title="currentStyle" media="screen">
 			@import "css/style.css";
 		</style>
-		<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="http://201.215.208.47:8080/socket.io/socket.io.js"></script>
 		<script>
 
-		  var socket = io.connect('http://localhost:8080');
-
+		  var socket = io.connect('http://201.215.208.47:8080');
 		  socket.on('color', function (data) {
 		  	if (data.color) {
-		  		console.log("Reciviendo color ["+data.color+"]");
+		  		//console.log("Recibiendo color ["+data.color+"]");
 		    	document.bgColor = data.color;
 		  	}
 		  });

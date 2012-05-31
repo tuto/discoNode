@@ -6,14 +6,14 @@
 		<style type="text/css" title="currentStyle" media="screen">
 			@import "css/style.css";
 		</style>
-		<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="http://201.215.208.47:8080/socket.io/socket.io.js"></script>
 		<script>
 
-		  var socket =  io.connect('http://localhost:8080');
+		  var socket =  io.connect('http://201.215.208.47:8080');
 
 		  function sendColor() {
 		  	var color = Math.floor(Math.random()*16777215).toString(16);
-		  	console.log("enviando color ["+color+"]");
+		  	//console.log("enviando color ["+color+"]");
 		  	socket.emit('music', { color: color });
 		  
 		  }
